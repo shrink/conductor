@@ -12,6 +12,6 @@ services:
       - ./composer.json:/srv/composer.json
       - ./composer.lock:/srv/composer.lock
       - .:/srv
-    command: composer validate-code
+    command: composer check
 volumes:
   vendor:
