@@ -31,7 +31,7 @@
       "vendor/bin/phpinsights --ansi --no-interaction --config-path=phpinsights.php"
     ],
     "static": [
-      "vendor/bin/psalm --long-progress --report=junit.xml"
+      "vendor/bin/psalm --long-progress --report=psalm.junit.xml"
     ],
     "test": [
       "vendor/bin/phpunit --colors=always"
