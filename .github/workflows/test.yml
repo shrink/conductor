@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run Tests
-      run: PHP_VERSION=${{ matrix.php }} docker-compose up
+      run: PHP_VERSION=${{ matrix.php }} docker-compose up --exit-code-from=conductor
     - name: Upload Test Artifacts
       uses: actions/upload-artifact@v2
       with:
