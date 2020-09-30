@@ -34,7 +34,7 @@ version:
 	test -n "$(VERSION)"
 	git show --oneline -s
 	read -p "Are you sure you want to force tag v$(VERSION)? Y [enter] / N [ctrl]+[c]"
-	git tag -fsam ':tada: Version $(VERSION)' v$(VERSION) && \
+	git tag -fsam ':gift: Version $(VERSION)' v$(VERSION) && \
 	git push -f origin v$(VERSION)
 
 # Log in to the application container
