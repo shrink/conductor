@@ -8,7 +8,6 @@ services:
         - PHP_VERSION=${PHP_VERSION:-7.4}
         - COMPOSER_VERSION=${COMPOSER_VERSION:-1}
     tty: true
-    working_dir: /srv
     volumes:
       - vendor:/srv/vendor
       - .:/srv
