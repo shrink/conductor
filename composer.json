@@ -28,7 +28,7 @@
       "@insights"
     ],
     "insights": [
-      "vendor/bin/phpinsights --ansi --no-interaction --config-path=phpinsights.php"
+      "vendor/bin/phpinsights --ansi --no-interaction --config-path=insights.php"
     ],
     "static": [
       "vendor/bin/psalm --long-progress --report=psalm.junit.xml"
