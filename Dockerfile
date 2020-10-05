@@ -8,6 +8,8 @@ FROM php:${PHP_VERSION}-cli-alpine
 
 WORKDIR /srv
 
+RUN apk add --no-cache git
+
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 COPY composer.json composer.lock ./

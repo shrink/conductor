@@ -7,17 +7,17 @@ COMPOSER_COMMAND = docker-compose run --rm conductor composer
 check:
 	${COMPOSER_COMMAND} check
 
-# Run the application's tests
+# Run the library's tests
 .PHONY: test
 test:
 	${COMPOSER_COMMAND} test
 
-# Install all of the application's composer dependencies
+# Install all of the library's composer dependencies
 .PHONY: install
 install:
 	${COMPOSER_COMMAND} install
 
-# Upgrade the application's composer dependencies
+# Upgrade the library's composer dependencies
 .PHONY: upgrade
 upgrade:
 	${COMPOSER_COMMAND} upgrade
@@ -28,7 +28,7 @@ require:
 	test -n "$(PACKAGE)"
 	${COMPOSER_COMMAND} require --prefer-source $(PACKAGE)
 
-# Tag a new version of the application | VERSION!
+# Tag a new version of the library | VERSION!
 .PHONY: version
 version:
 	test -n "$(VERSION)"
@@ -37,7 +37,7 @@ version:
 	git tag -fsam ':gift: Version $(VERSION)' v$(VERSION) && \
 	git push -f origin v$(VERSION)
 
-# Log in to the application container
+# Log in to the development container
 .PHONY: shell
 shell:
 	docker-compose run --rm conductor sh

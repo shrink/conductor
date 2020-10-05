@@ -1,6 +1,6 @@
 # Conductor
 
-Conductor is a runtime dependency manager.
+Conductor checks the status of runtime dependencies.
 
 ## Hooks
 
