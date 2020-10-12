@@ -2,7 +2,7 @@ MAKEFLAGS += --silent
 
 COMPOSER_COMMAND = docker-compose run --rm conductor composer
 
-# Run code checks
+# Run the library's code quality checks (test, analysis)
 .PHONY: check
 check:
 	${COMPOSER_COMMAND} check
@@ -11,22 +11,6 @@ check:
 .PHONY: test
 test:
 	${COMPOSER_COMMAND} test
-
-# Install all of the library's composer dependencies
-.PHONY: install
-install:
-	${COMPOSER_COMMAND} install
-
-# Upgrade the library's composer dependencies
-.PHONY: upgrade
-upgrade:
-	${COMPOSER_COMMAND} upgrade
-
-# Require a new composer dependency | PACKAGE?
-.PHONY: require
-require:
-	test -n "$(PACKAGE)"
-	${COMPOSER_COMMAND} require --prefer-source $(PACKAGE)
 
 # Tag a new version of the library | VERSION!
 .PHONY: version
