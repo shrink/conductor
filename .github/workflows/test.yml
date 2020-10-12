@@ -11,12 +11,12 @@ jobs:
       matrix:
         php: [7.4.10, 7.4]
     steps:
-    - uses: actions/checkout@v2
-    - name: Run Tests
-      run: PHP_VERSION=${{ matrix.php }} docker-compose up --exit-code-from=conductor
-    - name: Upload Test Artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        path: '*.junit.xml'
-        name: test-reports-${{ matrix.php }}
-        if-no-files-found: error
+      - uses: actions/checkout@v2
+      - name: Run Tests
+        run: PHP_VERSION=${{ matrix.php }} docker-compose up --exit-code-from=conductor
+      - name: Upload Test Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          path: '*.junit.xml'
+          name: test-reports-${{ matrix.php }}
+          if-no-files-found: error
