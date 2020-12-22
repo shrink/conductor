@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Shrink\Conductor;
 
 use Lcobucci\Clock\Clock;
+
 use function array_filter;
 use function count;
 
