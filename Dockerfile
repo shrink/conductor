@@ -13,5 +13,5 @@ RUN apk add --no-cache git
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 COPY composer.json composer.lock ./
-RUN composer global require hirak/prestissimo --dev --prefer-dist && \
-    composer install --no-ansi --no-interaction
+
+RUN composer install --no-ansi --no-interaction
